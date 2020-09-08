@@ -1,4 +1,4 @@
-package com.eyeson.handle.web.config;
+package com.eyeson.handle.web.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
