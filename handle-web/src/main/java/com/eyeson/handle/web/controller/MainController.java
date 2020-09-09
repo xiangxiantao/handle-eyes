@@ -10,6 +10,12 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+/**
+ * @decription:
+ * @author: haytt.xiang
+ * @date: 2020/9/9
+ * @version:  1.0
+*/
 @Api(value = "基础服务")
 @RestController
 public class MainController {
@@ -17,9 +23,6 @@ public class MainController {
     @ApiOperation(value = "欢迎信息")
     @GetMapping("/welcome")
     public String welcome(@RequestParam("user") String user){
-        if ("-1".equals(user)){
-            throw new RuntimeException("welcome错误");
-        }
         return "welcome";
     }
 

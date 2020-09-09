@@ -26,6 +26,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+/**
+ * @decription:
+ * @author: haytt.xiang
+ * @date: 2020/9/9
+ * @version:  1.0
+*/
 @Configuration
 public class EyesWebMvcConfig implements WebMvcConfigurer {
 
@@ -34,9 +40,11 @@ public class EyesWebMvcConfig implements WebMvcConfigurer {
         Gson gson = new GsonBuilder()
                 .serializeNulls()  //将空属性序列化
                 .enableComplexMapKeySerialization()
-                .registerTypeAdapterFactory(new HttpGsonTypeAdapterFactory())    //添加指定类型自定义的gson序列化方式
+                //添加指定类型自定义的gson序列化方式
+                .registerTypeAdapterFactory(new HttpGsonTypeAdapterFactory())
                 .registerTypeAdapter(Json.class, new SpringfoxJsonToGsonAdapter())
-                .setDateFormat("yyyy-MM-dd HH:mm:ss")  //指定日期类型(只支持Date，不支持localDate)的序列化和反序列化格式
+                //指定日期类型(只支持Date，不支持localDate)的序列化和反序列化格式
+                .setDateFormat("yyyy-MM-dd HH:mm:ss")
                 .create();
         return new GsonHttpMessageConverter(gson);
     }
@@ -74,7 +82,7 @@ public class EyesWebMvcConfig implements WebMvcConfigurer {
      */
     public class LocalDateAdapter extends TypeAdapter<LocalDate>{
 
-        DateTimeFormatter DEFAULT_DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        private final DateTimeFormatter DEFAULT_DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         @Override
         public void write(JsonWriter out, LocalDate value) throws IOException {
@@ -102,7 +110,7 @@ public class EyesWebMvcConfig implements WebMvcConfigurer {
      */
     public class LocalDateTimeAdapter extends TypeAdapter<LocalDateTime>{
 
-        DateTimeFormatter DEFAULT_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        private final DateTimeFormatter DEFAULT_DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         @Override
         public void write(JsonWriter out, LocalDateTime value) throws IOException {

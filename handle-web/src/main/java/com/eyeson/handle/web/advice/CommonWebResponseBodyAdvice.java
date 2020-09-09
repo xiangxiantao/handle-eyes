@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
+ * @decription:
  * RESTful接口全局统一响应格式切面
  * 这个切面需要比较精细化的指定受控制的包，不能将swagger的配置类等纳入管理，
  * 否则将导致swagger的输出内容格式变化，最终导致swagger不能正常工作
- *
  * 多个RestControllerAdvice通过@Order指定执行顺序
- */
+ * @author: haytt.xiang
+ * @date: 2020/9/9
+ * @version:  1.0
+*/
 @RestControllerAdvice(basePackages = "com.eyeson.handle.web.controller")
 public class CommonWebResponseBodyAdvice implements ResponseBodyAdvice {
 

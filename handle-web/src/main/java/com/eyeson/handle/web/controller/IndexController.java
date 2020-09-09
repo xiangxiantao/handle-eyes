@@ -5,8 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import springfox.documentation.annotations.ApiIgnore;
 
 /**
- * 将swagger文档设置为首页
- */
+ * @decription:  将swagger文档设置为首页
+ * @author: haytt.xiang
+ * @date: 2020/9/9
+ * @version:  1.0
+*/
 @Controller("indexController")
 @ApiIgnore
 public class IndexController {

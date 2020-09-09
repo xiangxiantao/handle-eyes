@@ -5,9 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Rest风格接口的统一响应格式
- * @param <T>
- */
+ * @decription: Rest风格接口的统一响应格式
+ * @author: haytt.xiang
+ * @date: 2020/9/9
+ * @version:  1.0
+*/
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
