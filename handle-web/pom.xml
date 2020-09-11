@@ -17,6 +17,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency> <!-- 引入log4j2依赖 -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -33,7 +38,7 @@
         </dependency>
 
         <dependency>
-            <groupId>io.springfox</groupId>
+            <groupId>io.springfox</groupId>Swagger2Controller
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
 
