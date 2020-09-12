@@ -3,7 +3,7 @@
     <Properties></Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <PatternLayout pattern="%X{user} -- %d{HH:mm:ss} %-5level %class{36} %L %M - %msg%xEx%n"/>
         </Console>
 
         <File name="FileAppender" fileName="logs/app.log">
@@ -17,9 +17,9 @@
     <Loggers>
         <Root level = "info">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="FileAppender"/>
+<!--            <AppenderRef ref="FileAppender"/>-->
         </Root>
-        <Logger name="springfox.documentation" level="error"/>
-        <Logger name="org.apache" level="error"/>
+<!--        <Logger name="springfox.documentation" level="error"/>
+        <Logger name="org.apache" level="error"/>-->
     </Loggers>
 </Configuration>
